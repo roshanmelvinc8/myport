@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="msvalidate.01"
+        content="11767F4F1B3572010F29708E70FE3516"
+    >
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login Dashboard</title>
+
+    <link rel="stylesheet" href="log.css">
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         LOGIN PAGE
+    =================================================== -->
+
+    <div id="loginSection" class="login-page">
+
+        <div class="outer-box">
+
+            <div class="login-box">
+
+
+                <!-- USER ICON -->
+
+                <div class="login-icon">
+
+                    <div class="user-head"></div>
+
+                    <div class="user-body"></div>
+
+                </div>
+
+
+                <!-- TITLE -->
+
+                <h1>Login</h1>
+
+                <div class="underline"></div>
+
+
+                <!-- USERNAME -->
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Username"
+                    autocomplete="username"
+                >
+
+
+                <!-- PASSWORD -->
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                >
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="button"
+                    onclick="login()"
+                >
+                    Login
+                </button>
+
+
+                <!-- ERROR / SUCCESS MESSAGE -->
+
+                <p id="loginMessage"></p>
+
+
+                <!-- FORGOT PASSWORD -->
+
+                <a
+                    href="javascript:void(0)"
+                    onclick="showReset()"
+                >
+                    Forgot Password?
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+<div id="resetSection" class="reset-page" style="display: none;">
+
+    <div class="reset-box">
+
+        <h1>Reset Password</h1>
+
+        <div class="underline"></div>
+
+        <input
+            type="text"
+            id="resetUsername"
+            placeholder="Username"
+        >
+
+        <input
+            type="password"
+            id="newPassword"
+            placeholder="Set New Password"
+        >
+
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm New Password"
+        >
+
+        <button type="button" onclick="resetPassword()">
+            Reset Password
+        </button>
+
+        <p id="resetMessage"></p>
+
+        <a href="#" onclick="showLogin(); return false;">
+            Back to Login
+        </a>
+
+    </div>
+
+</div>
+    <!-- ==================================================
+         RESET PASSWORD PAGE
+    =================================================== -->
+
+    <div
+        id="resetSection"
+        class="reset-page hidden"
+    >
+
+        <div class="reset-box">
+
+            <h1>Reset Password</h1>
+
+            <div class="underline"></div>
+
+
+            <!-- USERNAME -->
+
+            <input
+                type="text"
+                id="resetUsername"
+                placeholder="Username"
+            >
+
+
+            <!-- NEW PASSWORD -->
+
+            <input
+                type="password"
+                id="newPassword"
+                placeholder="Set New Password"
+            >
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm New Password"
+            >
+
+
+            <!-- RESET BUTTON -->
+
+            <button
+                type="button"
+                onclick="resetPassword()"
+            >
+                Reset Password
+            </button>
+
+
+            <!-- MESSAGE -->
+
+            <p id="resetMessage"></p>
+
+
+            <!-- BACK -->
+
+            <a
+                href="javascript:void(0)"
+                onclick="showLogin()"
+            >
+                Back to Login
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         DASHBOARD
+    =================================================== -->
+
+    <div
+        id="dashboard"
+        class="dashboard hidden"
+    >
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>My Portfolio</h2>
+
+                <p>Dashboard</p>
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav>
+
+                <button
+                    type="button"
+                    onclick="showDashboard()"
+                >
+                    <span class="nav-icon">🏠</span>
+                    Dashboard
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="showProfile()"
+                >
+                    <span class="nav-icon">👤</span>
+                    Profile
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="showSettings()"
+                >
+                    <span class="nav-icon">⚙️</span>
+                    Settings
+                </button>
+
+            </nav>
+
+
+            <!-- LOGOUT -->
+
+            <button
+                type="button"
+                class="logout-btn"
+                onclick="logout()"
+            >
+                <span class="nav-icon">🚪</span>
+                Logout
+            </button>
+
+        </aside>
+
+
+
+        <!-- ==================================================
+             MAIN DASHBOARD
+        =================================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- DASHBOARD HOME -->
+
+            <section
+                id="dashboardHome"
+                class="dashboard-page"
+            >
+
+                <div class="dashboard-header">
+
+                    <div>
+
+                        <p class="small-title">
+                            Welcome back
+                        </p>
+
+                        <h1>
+                            Hello,
+                            <span id="displayUsername">
+                                Roshan
+                            </span>
+                            👋
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARDS -->
+
+                <div class="cards">
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            💼
+                        </div>
+
+                        <div>
+
+                            <h3>Projects</h3>
+
+                            <h2>12</h2>
+
+                            <p>
+                                Completed projects
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            ✅
+                        </div>
+
+                        <div>
+
+                            <h3>Tasks</h3>
+
+                            <h2>28</h2>
+
+                            <p>
+                                Tasks completed
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            💬
+                        </div>
+
+                        <div>
+
+                            <h3>Messages</h3>
+
+                            <h2>05</h2>
+
+                            <p>
+                                New messages
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            ⭐
+                        </div>
+
+                        <div>
+
+                            <h3>Skills</h3>
+
+                            <h2>08</h2>
+
+                            <p>
+                                Technical skills
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 PROFILE
+            =================================================== -->
+
+            <section
+                id="profile"
+                class="dashboard-page hidden"
+            >
+
+                <h1>My Profile</h1>
+
+
+                <div class="profile-card">
+
+                    <div class="profile-avatar">
+                        👨‍💻
+                    </div>
+
+
+                    <h2 id="profileUsername">
+                        Roshan
+                    </h2>
+
+
+                    <p>
+                        UI/UX Designer & Web Developer
+                    </p>
+
+
+                    <div class="profile-details">
+
+                        <div>
+                            <strong>Skills</strong>
+
+                            <span>
+                                HTML, CSS, JavaScript, Python
+                            </span>
+                        </div>
+
+
+                        <div>
+                            <strong>Tools</strong>
+
+                            <span>
+                                Figma, Canva, GitHub
+                            </span>
+                        </div>
+
+
+                        <div>
+                            <strong>Location</strong>
+
+                            <span>
+                                Chennai, Tamil Nadu
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        onclick="editProfile()"
+                    >
+                        ✏️ Edit Profile
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 SETTINGS
+            =================================================== -->
+
+            <section
+                id="settings"
+                class="dashboard-page hidden"
+            >
+
+                <h1>Settings</h1>
+
+
+                <div class="settings-card">
+
+                    <div class="setting-row">
+
+                        <div>
+
+                            <h3>Dark Mode</h3>
+
+                            <p>
+                                Change dashboard appearance
+                            </p>
+
+                        </div>
+
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="darkModeToggle"
+                                onclick="darkMode()"
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="log.js"></script>
+
+</body>
+
+</html>
