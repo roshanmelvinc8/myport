@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGIN SECTION -->
+    <div id="loginSection" class="section">
+
+        <h1>Login</h1>
+
+        <input type="text" id="username" placeholder="Username">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <a onclick="showReset()">Forgot Password?</a>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+
+    <!-- RESET PASSWORD SECTION -->
+    <div id="resetSection" class="section hidden">
+
+        <h1>Login</h1>
+
+        <input type="text" id="resetUsername" placeholder="Username">
+
+        <input type="password" id="oldPassword" placeholder="Current Password">
+
+        <button onclick="showResetForm()">Login</button>
+
+        <hr>
+
+        <h2>Reset Password</h2>
+
+        <input type="password" id="newPassword"
+               placeholder="Set New Password">
+
+        <input type="password" id="confirmPassword"
+               placeholder="Confirm New Password">
+
+        <button onclick="resetPassword()">Reset Password</button>
+
+        <a onclick="showLogin()">Back to Login</a>
+
+        <p id="resetMessage"></p>
+
+    </div>
+
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="dashboard hidden">
+
+        <aside>
+
+            <h2>My Dashboard</h2>
+
+            <button onclick="showDashboard()">🏠 Dashboard</button>
+            <button onclick="showProfile()">👤 Profile</button>
+            <button onclick="showSettings()">⚙️ Settings</button>
+            <button onclick="logout()">🚪 Logout</button>
+
+        </aside>
+
+        <main>
+
+            <div id="dashboardHome">
+
+                <h1>Welcome, <span id="displayUsername"></span> 👋</h1>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <h3>Projects</h3>
+                        <h2>12</h2>
+                    </div>
+
+                    <div class="card">
+                        <h3>Tasks</h3>
+                        <h2>28</h2>
+                    </div>
+
+                    <div class="card">
+                        <h3>Messages</h3>
+                        <h2>5</h2>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="profile" class="dashboardPage hidden">
+
+                <h1>Profile</h1>
+
+                <div class="profileCard">
+
+                    <div class="avatar">👨‍💻</div>
+
+                    <h2 id="profileUsername"></h2>
+
+                    <p>Web Developer</p>
+
+                    <button onclick="editProfile()">Edit Profile</button>
+
+                </div>
+
+            </div>
+
+
+            <div id="settings" class="dashboardPage hidden">
+
+                <h1>Settings</h1>
+
+                <div class="settingsCard">
+
+                    <label>
+                        <input type="checkbox" onclick="darkMode()">
+                        Dark Mode
+                    </label>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="dash.js"></script>
+
+</body>
+</html>
